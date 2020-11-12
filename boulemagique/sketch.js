@@ -1,5 +1,5 @@
 let pressed = false;
-let mouse = false;
+let touch = false;
 let mode = false;
 let back = false;
 
@@ -104,6 +104,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   refresh();
+  touchStarded();
 }
 
 function refresh() {
@@ -163,6 +164,23 @@ function keyPressed() {
       back = false;
       pressed = false;
     }
+  }
+
+  function touchStarted() {
+    const s = random(selected);
+    history.unshift(s);
+    if (history.length > 5) history.pop();
+    textSize(50);
+    fill(0, 255, 255);
+    text("" + s, width / 2, height - 300);
+    console.log("%c Your answer is there", `color:pink;`);
+    setTimeout(function () {
+      refresh();
+      pressed = false;
+
+      console.log("%c You can now press", "color:green;");
+      setTimeout(() => console.clear(), 1000);
+    }, 3000);
   }
 
   if (!pressed) {
@@ -237,28 +255,4 @@ function keyPressed() {
       selected = bouleP;
     }
   }
-}
-
-function mousePressed() {
-  const s = random(selected);
-  history.unshift(s);
-  if (history.length > 5) history.pop();
-  textSize(50);
-  fill(0, 255, 255);
-  text("" + s, width / 2, height - 300);
-  console.log("%c Your answer is there", `color:pink;`);
-  setTimeout(function () {
-    refresh();
-    pressed = false;
-
-    console.log("%c You can now press", "color:green;");
-    setTimeout(() => console.clear(), 1000);
-  }, 3000);
-  setTimeout(function () {
-    refresh();
-    mouse = false;
-
-    console.log("%c You can now press", "color:green;");
-    setTimeout(() => console.clear(), 1000);
-  }, 3000);
 }
