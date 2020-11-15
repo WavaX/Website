@@ -104,7 +104,6 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   refresh();
-  touchStarded();
 }
 
 function refresh() {
