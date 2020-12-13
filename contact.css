@@ -1,5 +1,6 @@
 body {
-  background-image: url("assets/background.png");
+  background: url("assets/background.png") no-repeat center fixed;
+  background-size: cover;
 }
 
 h1 {
@@ -20,4 +21,16 @@ h2 {
   margin: 50px;
   padding: 0;
   list-style: none;
+}
+
+/* tools */
+
+.logoTwitter {
+  float: right;
+  margin-right: 300px;
+}
+
+.logoDiscord {
+  float: left;
+  margin-left: 300px;
 }
