@@ -13,7 +13,7 @@ h1 {
 
 body {
   background: url("assets/background.png") no-repeat center fixed;
-  background-size: 100%;
+  background-size: cover;
 }
 
 ul {
