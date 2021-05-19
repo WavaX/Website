@@ -43,7 +43,7 @@ h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(235, 64, 52);
     font-size: 70px;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 p {
@@ -51,3 +51,29 @@ p {
     font-size: 40px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+p.mobile {
+    display: none;
+}
+
+ @media screen and (max-width: 375px) {
+     p.mobile {
+         display: inline-block;
+     }
+
+     p.desktop {
+         display: none;
+     }
+ }
+
+ section {
+     text-align: center;
+ }
+ 
+ section img {
+     margin: 100px;
+     width: 15%;
+     height: 15%;
+     border-radius: 50%;
+     box-shadow: black 0 0 10px;
+ }
